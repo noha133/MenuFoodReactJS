@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { Navbar , Nav , Container } from 'react-bootstrap';
 import { Media } from 'reactstrap';
-import MenuDetail from './DishdetailComponent';
+import DishDetail from './DishdetailComponent';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle } from 'reactstrap';
 
@@ -20,23 +20,23 @@ class Menu extends Component {
     }
 
     
-    renderDish(dish) {
-        if (dish != null)
-            return(
-                <Card>
-                    <CardImg top src={dish.image} alt={dish.name} />
-                    <CardBody>
-                      <CardTitle>{dish.name}</CardTitle>
-                      <CardText>{dish.description}</CardText>
-                      console.log('dish.name');
-                    </CardBody>
-                </Card>
-            );
-        else
-            return(
-                <div></div>
-            );
-    }
+    // renderDish(dish) {
+    //     if (dish != null)
+    //         return(
+    //             <Card>
+    //                 <CardImg top src={dish.image} alt={dish.name} />
+    //                 <CardBody>
+    //                   <CardTitle>{dish.name}</CardTitle>
+    //                   <CardText>{dish.description}</CardText>
+                     
+    //                 </CardBody>
+    //             </Card>
+    //         );
+    //     else
+    //         return(
+    //             <div></div>
+    //         );
+    // }
 
     render() {
         const menu = this.props.dishes.map((dish) => {
@@ -61,9 +61,9 @@ class Menu extends Component {
                 <div className="row">
                   <div  className="col-12 col-md-5 m-1">
                  
-                    {/* <MenuDetail dish = {this.state.selectedDish} /> */}
+                    <DishDetail dish = {this.state.selectedDish} />
     
-                    {this.renderDish(this.state.selectedDish)}
+                    {/* {this.renderDish(this.state.selectedDish)} */}
                     
                   </div>
                 </div>
