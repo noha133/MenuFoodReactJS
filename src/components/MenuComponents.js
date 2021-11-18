@@ -1,9 +1,7 @@
 import React,{Component} from 'react';
 import { Navbar , Nav , Container } from 'react-bootstrap';
 import { Media } from 'reactstrap';
-
-
-
+import MenuDetail from './DishdetailComponent';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle } from 'reactstrap';
 
@@ -21,6 +19,7 @@ class Menu extends Component {
         this.setState({ selectedDish: dish});
     }
 
+    
     renderDish(dish) {
         if (dish != null)
             return(
@@ -29,6 +28,7 @@ class Menu extends Component {
                     <CardBody>
                       <CardTitle>{dish.name}</CardTitle>
                       <CardText>{dish.description}</CardText>
+                      console.log('dish.name');
                     </CardBody>
                 </Card>
             );
@@ -60,7 +60,11 @@ class Menu extends Component {
                 </div>
                 <div className="row">
                   <div  className="col-12 col-md-5 m-1">
+                 
+                    {/* <MenuDetail dish = {this.state.selectedDish} /> */}
+    
                     {this.renderDish(this.state.selectedDish)}
+                    
                   </div>
                 </div>
             </div>

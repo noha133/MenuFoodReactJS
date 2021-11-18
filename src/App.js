@@ -29,6 +29,7 @@ class App extends Component {
       </Container>
       </Navbar>
       <Menu dishes = {this.state.dishes} />
+      console.log('dish.name');
     </div>
   );
 }
